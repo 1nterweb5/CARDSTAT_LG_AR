@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    int tipoMazzo, numSorteggi,toglimi;
+    int tipoMazzo, numSorteggi;
 
     do {
         cout << "Inserire il tipo di mazzo (40 o 52)" << endl;
@@ -19,17 +19,12 @@ int main()
     do {
         cout << "inserire il numero di sorteggi da eseguire" << endl;
         cin >> numSorteggi;
-        if (numSorteggi < 2)) {
+        if (numSorteggi < 2) {
             cout << "Non e' stato inserito un valore corretto" << endl;
         }
-    } while (tipoMazzo != 40 || tipoMazzo != 52);
+    } while (numSorteggi < 2);
 
 
     cout << "Hello world!" << endl;
-
-    cin >> test;
-    test = test + 2;
-
-    cout << test;
     return 0;
 }
