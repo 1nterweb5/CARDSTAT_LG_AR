@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    int tipoMazzo, numSorteggi;
+    int tipoMazzo, numSorteggi,toglimi;
 
     do {
         cout << "Inserire il tipo di mazzo (40 o 52)" << endl;
