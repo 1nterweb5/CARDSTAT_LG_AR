@@ -24,7 +24,5 @@ int main()
         }
     } while (numSorteggi < 2);
 
-
-    cout << "arno" << endl;
     return 0;
 }
