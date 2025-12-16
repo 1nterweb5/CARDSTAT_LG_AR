@@ -25,6 +25,6 @@ int main()
     } while (numSorteggi < 2);
 
 
-    cout << "buongiorno" << endl;
+    cout << "arno" << endl;
     return 0;
 }
