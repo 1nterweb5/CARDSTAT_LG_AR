@@ -7,7 +7,7 @@ using namespace std;
 
 void sorteggio (int sorteggi, int valMax);
 
-void controlloCoppie (int numero)
+int controlloCoppieInt (int numero);
 
 int main()
 {
@@ -67,7 +67,7 @@ void sorteggio (int sorteggi, int valMax) {
            } else {
                 figura1 = NULL;
            }
-         if (contatoreSort == sorteggi -1) {
+         if (contatoreSort == sorteggi - 1) {
 
          }
 
