@@ -5,7 +5,10 @@
 using namespace std;
 
 
-void sorteggio (int a, int valMax);
+void sorteggio (int sorteggi, int valMax);
+
+void controlloCoppie (int numero)
+
 int main()
 {
     int tipoMazzo, numSorteggi, valoreMassimo;
@@ -36,57 +39,70 @@ int main()
 
     return 0;
 }
-void sorteggio (int a, int valMax) {
-    char seme, figura, colore;
-    int valore, sceltaSeme, sceltaColore;
+void sorteggio (int sorteggi, int valMax) {
+    char seme1, figura1, colore1, seme2, figura2, colore2;
+    int valore1, valore2, sceltaSeme, sceltaColore;
 
     srand(time(NULL));
 
-    for (int contatore=a; contatore>0; contatore--){
-        for (int contatore=a; contatore>0; contatore--){
-           valore = 1 + (rand () % valMax);
-           if (valore >= valMax - 3) {
-                if (valore == (valMax - 2)) {
-                    figura = 'F';
-                } else if (valore == (valMax - 1)) {
-                    figura = 'D';
-                } else if (valore == valMax) {
-                    figura = 'R';
+    for (int contatoreSort = sorteggi; contatoreSort>0; contatoreSort--){
+
+        if (contatoreSort == sorteggi - 1) {
+            valore2 = valore1;
+            figura2 = figura2;
+        }
+
+
+        for (int contatore = sorteggi; contatore>0; contatore--){
+           valore1 = 1 + (rand () % valMax);
+           if (valore1 >= valMax - 3) {
+                if (valore1 == (valMax - 2)) {
+                    figura1 = 'F';
+                } else if (valore1 == (valMax - 1)) {
+                    figura1 = 'D';
+                } else if (valore1 == valMax) {
+                    figura1 = 'R';
                 }
 
            } else {
-                figura = NULL;
+                figura1 = NULL;
            }
+         if (contatoreSort == sorteggi -1) {
+
+         }
 
         }
 
-        for (int contatore=a; contatore>0; contatore--){
-           sceltaColore = (rand () % 2);
-           if (sceltaColore == 0) {
-                colore = 'r';
-           } else {
-                colore = 'n';
-           }
+        if (contatoreSort == sorteggi - 1) {
+            colore2 = colore1;
         }
 
-        for (int contatore=a; contatore>0; contatore--){
+        if (contatoreSort == sorteggi - 1) {
+            seme2 = seme1;
+        }
+
+        for (int contatore = sorteggi; contatore>0; contatore--){
            sceltaSeme = (rand () % 4);
            switch (sceltaSeme) {
                case 0:
-                   seme = 'C';
+                   seme1 = 'C';
+                   colore1 = 'r';
                    break;
                case 1:
-                   seme = 'Q';
+                   seme1 = 'Q';
+                   colore1 = 'r';
                    break;
                case 2:
-                   seme = 'F';
+                   seme1 = 'F';
+                   colore1 = 'n';
                    break;
                case 3:
-                   seme = 'P';
+                   seme1 = 'P';
+                   colore1 = 'n';
                    break;
            }
         }
 
-        cout << seme << valore << colore << figura << endl;
+        cout << seme1 << valore1 << colore1 << figura1 << endl;
         }
 }
