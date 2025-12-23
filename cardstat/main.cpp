@@ -7,7 +7,7 @@ using namespace std;
 
 void sorteggio (int sorteggi, int valMax);
 
-int controlloCoppieInt (int numero);
+void controlloCoppieInt (int valoreNuovo, int valoreVecchio, int sorteggi, int contatoreSorteggi);
 
 int main()
 {
@@ -47,7 +47,7 @@ void sorteggio (int sorteggi, int valMax) {
 
     for (int contatoreSort = sorteggi; contatoreSort>0; contatoreSort--){
 
-        if (contatoreSort == sorteggi - 1) {
+        if (contatoreSort <= sorteggi - 1) {
             valore2 = valore1;
             figura2 = figura2;
         }
@@ -67,17 +67,17 @@ void sorteggio (int sorteggi, int valMax) {
            } else {
                 figura1 = NULL;
            }
-         if (contatoreSort == sorteggi - 1) {
-
+         if (contatoreSort <= sorteggi - 1) {
+                controlloCoppieInt(valore1, valore2, sorteggi, contatoreSort);
          }
 
         }
 
-        if (contatoreSort == sorteggi - 1) {
+        if (contatoreSort <= sorteggi - 1) {
             colore2 = colore1;
         }
 
-        if (contatoreSort == sorteggi - 1) {
+        if (contatoreSort <= sorteggi - 1) {
             seme2 = seme1;
         }
 
@@ -105,4 +105,19 @@ void sorteggio (int sorteggi, int valMax) {
 
         cout << seme1 << valore1 << colore1 << figura1 << endl;
         }
+}
+
+void controlloCoppieInt (int valoreNuovo, int valoreVecchio, int sorteggi, int contatoreSorteggi) {
+    int coppie = 0;
+    double probabilita;
+
+    if (contatoreSorteggi > 0) {
+        if (valoreNuovo == valoreVecchio) {
+            coppie++;
+        }
+    } else {
+        probabilita = coppie / sorteggi;
+        cout << "ci sono state" << coppie << "sulla base del valore numerico, "
+        << "e la probabilita' di aver pescato queste coppie è di" << probabilita << endl;
+    }
 }
