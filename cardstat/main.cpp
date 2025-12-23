@@ -37,7 +37,7 @@ int main() {
     }
 
     do {
-        cout << "inserire il numero di sorteggi da eseguire" << endl;
+        cout << "inserire il numero di sorteggi da eseguire (almeno 2)" << endl;
         cin >> numSorteggi;
         if (numSorteggi < 2) {
             cout << "Non e' stato inserito un valore corretto" << endl;
